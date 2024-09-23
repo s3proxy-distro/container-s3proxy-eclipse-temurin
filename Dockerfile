@@ -23,6 +23,8 @@ COPY --from=builder \
     /work/src/main/resources/run-docker-container.sh \
     /opt/s3proxy/
 
+RUN chmod +x /opt/s3proxy/s3proxy
+
 ENV \
     LOG_LEVEL="info" \
     S3PROXY_AUTHORIZATION="aws-v2-or-v4" \
